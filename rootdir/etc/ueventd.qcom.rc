@@ -286,6 +286,11 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/virtual/input/input*                   set_delay_ms     0660  system   input
 /sys/devices/virtual/input/input*                   do_flush         0660  system   input
 
+# ctp
+/sys/devices/soc.0/78b9000.i2c/i2c-5/5-0038/sensors/ft5x06-proximity	enable	0660	input	system
+/sys/devices/virtual/gesture/gesture*		enable	0660	input	system
+/sys/devices/virtual/gesture/gesture*		pocket	0660	input	system
+
 # vm_bms
 /dev/vm_bms               0660   system     system
 /dev/battery_data         0660   system     system
