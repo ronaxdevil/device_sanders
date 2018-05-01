@@ -28,4 +28,11 @@
          devices will be able to vary their amplitude but do not possess enough dynamic range to
          have distinct intensity levels -->
     <bool name="config_vibration_supports_multiple_intensities">true</bool>
+
+    <!-- Device specific doze package -->
+    <string name="config_customDozePackage">com.moto.actions/com.moto.actions.DozeSettingsActivity</string>
+
+    <!-- Device specific gesture package -->
+    <string name="config_customGesturePackage">com.moto.actions/com.moto.actions.ActionsPreferenceActivity</string>
+
 </resources>
