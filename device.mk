@@ -353,7 +353,9 @@ PRODUCT_PACKAGES += \
     init.safailnet.rc \
     init.sanders.rc \
     init.dtv.rc \
-    init.dtv.sh
+    init.dtv.sh \
+    init.spectrum.rc \
+    init.spectrum.sh
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/rootdir/etc/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
