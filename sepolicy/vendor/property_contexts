@@ -7,3 +7,4 @@ persist.audio.dirac.               u:object_r:dirac_prop:s0
 # Spectrum
 persist.spectrum.profile           u:object_r:spectrum_prop:s0
 
+sys.listeners.registered           u:object_r:tee_listener_prop:s0

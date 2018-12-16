@@ -9,3 +9,4 @@ type dirac_prop, property_type;
 # Spectrum
 type spectrum_prop, property_type;
 
+type tee_listener_prop, property_type;
