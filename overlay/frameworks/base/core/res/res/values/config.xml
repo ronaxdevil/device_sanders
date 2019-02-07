@@ -584,4 +584,6 @@
         <item>392.9</item>
     </array>
 
+    <!-- Enable all rotations -->
+    <bool name="config_allowAllRotations">true</bool>
 </resources>
