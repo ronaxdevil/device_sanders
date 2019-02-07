@@ -600,4 +600,8 @@
           specified name exists on the device, autofill will be disabled by default.
     -->
     <string name="config_defaultAutofillService" translatable="false">com.google.android.gms/.autofill.service.AutofillService</string>
+
+    <!-- Enable all rotations -->
+    <bool name="config_allowAllRotations">true</bool>
+
 </resources>
