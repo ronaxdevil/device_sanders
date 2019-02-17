@@ -32,6 +32,7 @@ import lineageos.providers.LineageSettings;
 import org.lineageos.settings.device.util.FileUtils;
 import org.lineageos.settings.device.actions.Constants;
 import org.lineageos.settings.device.ServiceWrapper.LocalBinder;
+import org.lineageos.settings.device.dirac.DiracUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     static final String TAG = "LineageActions";
@@ -56,7 +57,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         }
 
         context.startService(new Intent(context, ServiceWrapper.class));
-    }
+        DiracUtils.initialize();
+   }
 
     protected static void enableNavBar(boolean enable, Context context) {
        // LineageSettings.Global.putInt(context.getContentResolver(),
