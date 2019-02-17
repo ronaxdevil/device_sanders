@@ -57,7 +57,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         }
 
         context.startService(new Intent(context, ServiceWrapper.class));
-        DiracUtils.initialize(context);
+        new DiracUtils(context);
    }
 
     protected static void enableNavBar(boolean enable, Context context) {
