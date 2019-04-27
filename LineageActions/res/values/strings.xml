@@ -142,4 +142,7 @@
     <!-- Headers -->
     <string name="diracheader">Dirac</string>
 
+    <!-- QS tile title -->
+    <string name="dirac_qs_tile_title">Dirac Sound</string>
+
 </resources>
