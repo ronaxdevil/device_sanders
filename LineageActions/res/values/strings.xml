@@ -16,7 +16,7 @@
 
     <!-- Title and summary -->
     <string name="moto_actions_title">Moto Actions</string>
-
+    <string name="moto_actions_summary">extra shit for your moto</string>
     <!-- Device gestures -->
     <string name="device_gestures_title">Device gestures</string>
     <string name="device_gestures_summary">Manage device gestures</string>
@@ -145,4 +145,8 @@
     <!-- QS tile title -->
     <string name="dirac_qs_tile_title">Dirac Sound</string>
 
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_title">Kernel Profile</string>
+    <string name="spectrum_summary">Choose your kernel profile</string>
+    <string name="spectrum_dialogTitle">Choose your kernel profile</string>
 </resources>

@@ -22,7 +22,7 @@
         android:key="gestures"
         android:title="@string/device_gestures_title"
         android:summary="@string/device_gestures_summary"
-        android:icon="@drawable/ic_settings_gestures">
+        android:icon="@drawable/ic_settings_gesturess">
             <intent
                 android:targetPackage="org.lineageos.settings.device"
                 android:targetClass="org.lineageos.settings.device.GestureSettingsActivity" />
@@ -71,4 +71,17 @@
                 android:targetClass="org.lineageos.settings.dirac.DiracActivity" />
         </Preference>
     </PreferenceCategory>
+
+    <ListPreference
+        android:key="spectrum"
+        android:title="@string/spectrum_title"
+        android:summary="@string/spectrum_summary"
+        android:defaultValue="0"
+        android:entries="@array/spectrum_profiles"
+        android:entryValues="@array/spectrum_values"
+        android:dialogTitle="@string/spectrum_dialogTitle"
+	android:icon="@drawable/ic_settings_spectrum"/>
+	    <intent
+		android:targetPackage="org.lineageos.settings.device"
+		android:targetClass="org.lineageos.settings.device.ShitPanelSettings" />
 </PreferenceScreen>
