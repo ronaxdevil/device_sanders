@@ -95,7 +95,15 @@
             android:label="@string/screen_off_gestures_title"
             android:theme="@style/LineageActions">
         </activity>
-
+        <!-- Dirac Sounds -->
+        <activity
+            android:name="org.lineageos.settings.dirac.DiracActivity"
+            android:label="@string/dirac_title"
+	    android:theme="@style/LineageActions">
+            <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
