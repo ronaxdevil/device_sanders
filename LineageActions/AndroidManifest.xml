@@ -51,7 +51,7 @@
         </service>
 
 	<service
-            android:name="com.moto.actions.dirac.DiracTileService"
+            android:name="org.lineageos.settings.dirac.DiracTileService"
             android:icon="@drawable/dirac_qs_tile_icon"
             android:label="@string/dirac_qs_tile_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">

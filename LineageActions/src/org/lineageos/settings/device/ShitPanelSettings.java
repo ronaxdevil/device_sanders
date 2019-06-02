@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings;
+package org.lineageos.settings.device;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -44,7 +44,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.util.Log;
 
-import org.lineageos.settings.R;
+import org.lineageos.settings.device.R;
 
 public class ShitPanelSettings extends PreferenceActivity implements
                                   Preference.OnPreferenceChangeListener {
