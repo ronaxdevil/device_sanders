@@ -59,7 +59,7 @@
     </Preference>
 
     <PreferenceCategory
-        android:title="@string/diracheader">
+        android:title="@string/extrasheader">
         <Preference
         android:key="dirac"
         android:title="@string/dirac_title"
@@ -70,7 +70,6 @@
                 android:targetPackage="org.lineageos.settings.device"
                 android:targetClass="org.lineageos.settings.dirac.DiracActivity" />
         </Preference>
-    </PreferenceCategory>
 
     <ListPreference
         android:key="spectrum"
@@ -84,4 +83,5 @@
 	    <intent
 		android:targetPackage="org.lineageos.settings.device"
 		android:targetClass="org.lineageos.settings.device.ShitPanelSettings" />
+    </PreferenceCategory>
 </PreferenceScreen>

@@ -140,7 +140,7 @@
     <string name="dirac_preset_metal">Metal</string>
 
     <!-- Headers -->
-    <string name="diracheader">Dirac</string>
+    <string name="extrasheader">Extra</string>
 
     <!-- QS tile title -->
     <string name="dirac_qs_tile_title">Dirac Sound</string>
