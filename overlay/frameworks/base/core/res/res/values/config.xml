@@ -498,4 +498,6 @@
     <!-- Show battery fully charged notification -->
     <bool name="config_showBatteryFullyChargedNotification">true</bool>
 
+    <!-- Whether to enable Qualcomm Boost Framework -->
+    <bool name="config_enableQcCpuBoost">true</bool>
 </resources>
