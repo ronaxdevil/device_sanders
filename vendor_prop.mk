@@ -405,3 +405,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.dha_th_rate=2.3 \
     ro.config.sdha_apps_bg_max=64 \
     ro.config.sdha_apps_bg_min=8
+
+#Device Model
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.model=Moto G (5S) Plus \
+    ro.product.vendor.model=Moto G (5S) Plus \
+    ro.build.product=Moto G (5S) Plus
