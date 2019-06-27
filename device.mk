@@ -106,7 +106,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     libbson \
-    Snap2 \
+    SnapdragonCamera2 \
     libgui_vendor \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
@@ -323,7 +323,6 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-
     android.hardware.power@1.0-impl \
     android.hardware.power@1.2-service \
     power.qcom
