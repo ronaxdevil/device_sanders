@@ -30,9 +30,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
@@ -87,18 +84,13 @@ public class KeyHandler implements DeviceKeyHandler {
             .build();
     private final Context mContext;
     private final PowerManager mPowerManager;
-    WakeLock mProximityWakeLock;
     WakeLock mGestureWakeLock;
     private KeyguardManager mKeyguardManager;
     private FPScreenOffGesturesHandler mFPScreenOffGesturesHandler;
-    private SensorManager mSensorManager;
     private CameraManager mCameraManager;
     private String mRearCameraId;
     private boolean mTorchEnabled;
-    private Sensor mProximitySensor;
     private Vibrator mVibrator;
-    private int mProximityTimeOut;
-    private boolean mProximityWakeSupported;
     private ISearchManager mSearchManagerService;
     private Handler mHandler;
     private int fpTapCounts = 0;
@@ -138,19 +130,6 @@ public class KeyHandler implements DeviceKeyHandler {
 
         mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "GestureWakeLock");
-
-        final Resources resources = mContext.getResources();
-        mProximityTimeOut = resources.getInteger(
-                com.android.internal.R.integer.config_proximityCheckTimeout);
-        mProximityWakeSupported = resources.getBoolean(
-                com.android.internal.R.bool.config_proximityCheckOnWake);
-
-        if (mProximityWakeSupported) {
-            mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
-            mProximitySensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-            mProximityWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                    "ProximityWakeLock");
-        }
 
         mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         if (mVibrator == null || !mVibrator.hasVibrator()) {
@@ -656,45 +635,9 @@ public class KeyHandler implements DeviceKeyHandler {
         if (!mFPScreenOffGesturesHandler.hasMessages(FP_ACTION_REQUEST)) {
             Message msg = mFPScreenOffGesturesHandler.obtainMessage(FP_ACTION_REQUEST);
             msg.arg1 = scanCode;
-            boolean defaultProximity = mContext.getResources().getBoolean(
-                    com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
-            boolean proximityWakeCheckEnabled = Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;
-            if (mProximityWakeSupported && proximityWakeCheckEnabled && mProximitySensor != null) {
-                mFPScreenOffGesturesHandler.sendMessageDelayed(msg, mProximityTimeOut);
-                registerFPScreenOffListener(scanCode);
-            } else {
                 mFPScreenOffGesturesHandler.sendMessage(msg);
             }
         }
-    }
-
-    private void registerFPScreenOffListener(final int scanCode) {
-        mProximityWakeLock.acquire();
-        mSensorManager.registerListener(new SensorEventListener() {
-            @Override
-            public void onSensorChanged(SensorEvent event) {
-                mProximityWakeLock.release();
-                mSensorManager.unregisterListener(this);
-                if (!mFPScreenOffGesturesHandler.hasMessages(FP_ACTION_REQUEST)) {
-                    // The sensor took to long, ignoring.
-                    return;
-                }
-                mFPScreenOffGesturesHandler.removeMessages(FP_ACTION_REQUEST);
-                if (event.values[0] == mProximitySensor.getMaximumRange()) {
-                    Message msg = mFPScreenOffGesturesHandler.obtainMessage(FP_ACTION_REQUEST);
-                    msg.arg1 = scanCode;
-                    mFPScreenOffGesturesHandler.sendMessage(msg);
-                }
-            }
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-            }
-
-        }, mProximitySensor, SensorManager.SENSOR_DELAY_FASTEST);
-    }
-
 
     private void resetFPGestureDelay() {
         fpGesturePending = false;

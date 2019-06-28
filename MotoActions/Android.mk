@@ -18,7 +18,6 @@ LOCAL_RESOURCE_DIR := \
     $(TOP)/packages/resources/devicesettings/res
 
 LOCAL_PROGUARD_ENABLED := disabled
-LOCAL_DEX_PREOPT := false
 
 include frameworks/base/packages/SettingsLib/common.mk
 
