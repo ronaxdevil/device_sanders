@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Title and summary -->
-    <string name="moto_actions_title">Moto Shit</string>
-    <string name="moto_actions_summary">Yea we call it shit</string>
+    <string name="moto_actions_title">Moto Ancillary</string>
+    <string name="moto_actions_summary">An Organization to Feature your Moto</string>
 
     <!-- Device gestures -->
     <string name="device_gestures_title">Device gestures</string>
