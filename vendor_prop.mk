@@ -402,8 +402,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.sdha_apps_bg_max=64 \
     ro.config.sdha_apps_bg_min=8
 
-#Device Model
+# FOSS CONFIGS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qcom.dpps.sensortype=3 \
+    ro.qualcomm.display.paneltype=1 \
+    ro.qualcomm.foss=1 \
+    config.foss.xml=1 \
+    config.foss.path=/vendor/etc/FOSSConfig.xml
+
+#IDKY
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.model=Moto G (5S) Plus \
     ro.product.vendor.model=Moto G (5S) Plus \
     ro.build.product=Moto G (5S) Plus
+
+# Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.havoc.maintainer=@Ronax
+
