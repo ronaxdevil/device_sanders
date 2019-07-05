@@ -1,18 +1,5 @@
 # Initialization
 on property:sys.boot_completed=1
-   chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-   chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-   chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-   chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-   chown system system /sys/module/workqueue/paramaters/power_efficient
-   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-   chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-   chmod system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-   chmod system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-   chmod system system /sys/class/kgsl/kgsl-3d0/devfreq/governor
-   chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-   chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-   chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/governor
 
 # Set default profile on first boot
     exec u:r:init:s0 root root -- /vendor/bin/init.spectrum.sh
@@ -23,7 +10,7 @@ on property:sys.boot_completed=1
 # Balance (default profile)
 on property:persist.spectrum.profile=0
     # CPU
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 652800
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2016000
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 200
@@ -33,14 +20,14 @@ on property:persist.spectrum.profile=0
     write /sys/module/workqueue/parameters/power_efficient Y
 
     # GPU
-    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor msm-adreno-tz
+    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor "msm-adreno-tz"
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/min_freq 133000000
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/max_freq 650000000
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 650000000
 
     # I/O Scheduler
     write /sys/block/mmcblk0/queue/read_ahead_kb 512
-    write /sys/block/mmcblk0/queue/scheduler bfq
+    write /sys/block/mmcblk0/queue/scheduler "maple"
 
     # Set thermal restrictions
     write /sys/kernel/msm_thermal/enabled 0
@@ -59,7 +46,7 @@ on property:persist.spectrum.profile=0
 # Performance
 on property:persist.spectrum.profile=1
     # CPU
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 652800
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2208000
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
@@ -69,50 +56,50 @@ on property:persist.spectrum.profile=1
     write /sys/module/workqueue/parameters/power_efficient N
 
     # GPU
-    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor msm-adreno-tz
+    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor "msm-adreno-tz"
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/min_freq 133000000
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/max_freq 700000000
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 700000000
 
     # I/O Scheduler
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
-    write /sys/block/mmcblk0/queue/scheduler cfq
+    write /sys/block/mmcblk0/queue/scheduler "cfq"
 
 # Battery
 on property:persist.spectrum.profile=2
     # CPU
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor smartmax_eps
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "smartmax_eps"
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 652800
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1689600
     write /sys/module/msm_performance/parameters/touchboost 0
     write /sys/module/workqueue/parameters/power_efficient Y
 
     # GPU
-    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor msm-adreno-tz
+    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor "msm-adreno-tz"
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/min_freq 133000000
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/max_freq 510000000
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 510000000
 
     # I/O Scheduler
     write /sys/block/mmcblk0/queue/read_ahead_kb 128
-    write /sys/block/mmcblk0/queue/scheduler anxiety
+    write /sys/block/mmcblk0/queue/scheduler "anxiety"
 
 # Gaming
 on property:persist.spectrum.profile=3
     # CPU
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "performance"
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 652800
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2208000
     write /sys/module/msm_performance/parameters/touchboost 1
     write /sys/module/workqueue/parameters/power_efficient N
 
     # GPU
-    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor performance
+    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor "performance"
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/min_freq 133000000
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/max_freq 700000000
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 700000000
 
     # I/O Scheduler
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
-    write /sys/block/mmcblk0/queue/scheduler deadline
+    write /sys/block/mmcblk0/queue/scheduler "deadline"
 
