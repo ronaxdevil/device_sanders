@@ -412,3 +412,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.model=Moto G (5S) Plus \
     ro.product.vendor.model=Moto G (5S) Plus \
     ro.build.product=Moto G (5S) Plus
+
+# GPS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.location.osnlp.region.package=com.google.android.gms
