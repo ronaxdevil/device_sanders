@@ -42,8 +42,6 @@ PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_RELEASE_NAME := sanders
 
-PRODUCT_MODEL := Moto G (5S) Plus
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="Moto G (5S) Plus" \
     PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36 9fea release-keys"
