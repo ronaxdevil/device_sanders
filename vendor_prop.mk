@@ -1,4 +1,4 @@
-nan#
+#
 # vendor props for sanders
 #
 
