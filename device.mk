@@ -405,6 +405,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libqsap_shim
 
+# ThermalController app
+PRODUCT_PACKAGES += \
+    ThermalController
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
