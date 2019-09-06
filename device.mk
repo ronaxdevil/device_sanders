@@ -210,8 +210,8 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     telephony-ext
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+   #telephony-ext
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -471,8 +471,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Wi-Fi Display
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+#PRODUCT_BOOT_JARS += \
+#   WfdCommon
 
 # CarrierConfig
 PRODUCT_PACKAGES += \
