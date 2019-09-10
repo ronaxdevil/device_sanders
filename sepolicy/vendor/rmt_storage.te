@@ -1,3 +1,6 @@
+r_dir_file(rmt_storage fsg_file)
+r_dir_file(rmt_storage, persist_file)
+
 allow rmt_storage sysfs_rmt_storage:file rw_file_perms;
 allow rmt_storage sysfs_rmt_storage:dir { search open };
 allow rmt_storage sysfs_uio:file r_file_perms;
@@ -11,3 +14,4 @@ allow rmt_storage fsg_file:dir search;
 allow rmt_storage fsg_file:lnk_file read;
 
 allow rmt_storage persist_file:dir r_dir_perms;
+
