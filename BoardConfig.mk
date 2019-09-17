@@ -24,6 +24,8 @@ BOARD_VENDOR := motorola-qcom
 
 BUILD_BROKEN_DUP_RULES := true
 
+BUILD_BROKEN_PHONY_TARGETS := true
+
 # AIDs and CAPS
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
