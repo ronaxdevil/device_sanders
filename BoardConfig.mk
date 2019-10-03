@@ -82,6 +82,7 @@ TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := r353983c
 #TARGET_USE_SDCLANG := true
+BOARD_ROOT_EXTRA_FOLDERS := persist firmware dsp fsg
 
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
@@ -246,6 +247,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor/mount
 
 #Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
