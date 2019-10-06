@@ -62,4 +62,8 @@ sed -i "s/input/uhid input/" "$FP_SERVICE_RC"
 MOT_GPU_MAPPER="$BLOB_ROOT"/vendor/lib/libmot_gpu_mapper.so
 patchelf --add-needed libgpu_mapper_shim.so "$MOT_GPU_MAPPER"
 
+# Load camera shim
+CAMERA_SHIM="$BLOB_ROOT"/vendor/lib/hw/camera.msm8953.so
+patchelf --add-needed libshim_camera.so "$CAMERA_SHIM"
+
 "$MY_DIR"/setup-makefiles.sh
