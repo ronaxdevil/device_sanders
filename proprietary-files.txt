@@ -846,35 +846,3 @@ vendor/lib/libwfdhdcpcp.so
 vendor/lib/libwfdmmservice.so
 vendor/lib/libwfdmodulehdcpsession.so
 vendor/lib64/libwfdhdcpcp.so
-
-# QTI Performance libs
--framework/QPerformance.jar
--framework/UxPerformance.jar
-bin/perfservice
-etc/init/perfservice.rc
-etc/perf/whitelistedapps.xml
-lib/libqti-at.so
-lib/libqti-perfd-client_system.so
-lib/libqti-iopd-client_system.so
-lib/libqti-util_system.so
-lib/libqti_performance.so
-lib64/libqti-at.so
-lib64/libqti-perfd-client_system.so
-lib64/libqti-iopd-client_system.so
-lib64/libqti-util_system.so
-lib64/libqti_performance.so
-
-
-# Perf - from Tissot PKQ1.180917.001/V10.0.7.0.PDHMIXM
-lib/vendor.qti.hardware.iop@1.0.so
-lib/vendor.qti.hardware.iop@2.0.so
-lib64/vendor.qti.hardware.iop@1.0.so
-lib64/vendor.qti.hardware.iop@2.0.so
-vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib/libqti-iopd-client.so
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
-vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib64/libqti-iopd-client.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
