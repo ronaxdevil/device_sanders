@@ -2,8 +2,8 @@
 #binder_call(init, hwservicemanager);
 # binder_call(init, servicemanager);
 
-allow init hwservicemanager:binder call;
-allow init mm-qcamerad:binder transfer;
+#allow init hwservicemanager:binder call;
+#allow init mm-qcamerad:binder transfer;
 allow init platform_app:binder transfer;
 
 allow init system_app:binder transfer;
