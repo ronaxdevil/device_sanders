@@ -16,3 +16,5 @@
 PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/havoc_sanders.mk
 
+COMMON_LUNCH_CHOICES := \
+	havoc_sanders-userdebug
