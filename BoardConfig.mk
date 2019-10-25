@@ -194,9 +194,6 @@ BOARD_HAVE_FM_RADIO := true
 BOARD_DISABLE_FMRADIO_LIBJNI := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
-#FSG
-BOARD_ROOT_EXTRA_FOLDERS := fsg
-
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
@@ -219,6 +216,15 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456      #   262144 * 1024 mmcblk0p52
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23520384    #    20580 * 1024 mmcblk0p38
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4294967296    #  4194304 * 1024 mmcblk0p53
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 25614597120 # 25014255 * 1024 mmcblk0p54
+
+
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist \
+    /vendor/firmware_mnt:/firmware \
+    /vendor/firmware_mnt/image:firmware/image \
+    /vendor/dsp:/dsp
+
+BOARD_ROOT_EXTRA_FOLDERS := fsg
 
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
@@ -282,8 +288,5 @@ WIFI_DRIVER_FW_PATH_P2P          := "p2p"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2019-06-01
-
-BOARD_ROOT_EXTRA_SYMLINKS := \
-	/vendor/firmware_mnt/image:firmware/image
+VENDOR_SECURITY_PATCH := 2019-11-01
 
