@@ -27,7 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, device/motorola/sanders/device.mk)
 
 # Inherit some common Havoc stuff.
-$(call inherit-product, vendor/havoc/config/common.mk)
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
