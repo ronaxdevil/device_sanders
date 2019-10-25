@@ -25,7 +25,7 @@ allow cameraserver media_rw_data_file:file { create read write open };
 allow cameraserver cameraserver:process { execmem };
 
 ####
-allow cameraserver debug_prop:file { r_file_perms };
+#allow cameraserver debug_prop:file { r_file_perms };
 allow cameraserver debug_prop:property_service set;
 
 #######
