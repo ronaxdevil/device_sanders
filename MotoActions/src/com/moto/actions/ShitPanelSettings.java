@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2015 The CyanogenMod Project
  *
@@ -53,12 +52,14 @@ public class ShitPanelSettings extends PreferenceActivity implements
     public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
     public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
 
+    public static final String KEY_DCDIM_SWITCH = "dcdim";
     private static final String SPECTRUM_KEY = "spectrum";
     private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
     private VibratorStrengthPreference mVibratorStrength;
     private VibratorCallStrengthPreference mVibratorCallStrength;
     private VibratorNotifStrengthPreference mVibratorNotifStrength;
+    private TwoStatePreference mDCDimSwitch;
     private ListPreference mSpectrum;
 
 @Override
@@ -81,6 +82,8 @@ public class ShitPanelSettings extends PreferenceActivity implements
             mVibratorNotifStrength.setEnabled(VibratorNotifStrengthPreference.isSupported());
         }
 
+        mDCDimSwitch = (TwoStatePreference) findPreference(KEY_DCDIM_SWITCH);
+        mDCDimSwitch.setOnPreferenceChangeListener(new DCDimSwitch());
 
         mSpectrum = (ListPreference) findPreference(SPECTRUM_KEY);
         if( mSpectrum != null ) {

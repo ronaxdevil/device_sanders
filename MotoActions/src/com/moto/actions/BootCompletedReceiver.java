@@ -22,7 +22,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
@@ -30,11 +30,13 @@ import android.util.Log;
 import com.moto.actions.dirac.DiracUtils;
 import com.moto.actions.DisplayCalibration;
 import com.moto.actions.util.FileUtils;
+import com.moto.actions.DCDimSwitch;
 import com.moto.actions.actions.Constants;
 import com.moto.actions.ServiceWrapper.LocalBinder;
 import com.moto.actions.VibratorStrengthPreference ;
 import com.moto.actions.VibratorCallStrengthPreference ;
 import com.moto.actions.VibratorNotifStrengthPreference ;
+import com.moto.actions.ShitPanelSettings ;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     static final String TAG = "MotoActions";
@@ -42,9 +44,26 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     private ServiceWrapper mServiceWrapper;
 
+    private void restore(String file, boolean enabled) {
+        if (file == null) {
+            return;
+        }
+        if (enabled) {
+            FileUtils.writeValue(file, "1");
+        }
+    }
+
+    private void restore(String file, String value) {
+        if (file == null) {
+            return;
+        }
+        FileUtils.writeValue(file, value);
+    }
+
     @Override
     public void onReceive(final Context context, Intent intent) {
         Log.i(TAG, "Booting");
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
         if (intent.getAction() != null && !intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
             return;
@@ -56,6 +75,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         }
 
         context.startService(new Intent(context, ServiceWrapper.class));
+        boolean enabled = sharedPrefs.getBoolean(ShitPanelSettings.KEY_DCDIM_SWITCH, false);
+        restore(DCDimSwitch.getFile(), enabled);
         VibratorStrengthPreference.restore(context);
         VibratorCallStrengthPreference.restore(context);
         VibratorNotifStrengthPreference.restore(context);
