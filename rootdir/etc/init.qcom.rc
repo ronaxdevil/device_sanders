@@ -976,7 +976,7 @@ on property:sys.boot_completed=1
 
     # governor settings
     write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "alucard"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
 
     # re-enable thermal & BCL core_control now
     write /sys/module/msm_thermal/core_control/enabled 1
@@ -1003,8 +1003,6 @@ on property:sys.boot_completed=1
     write /proc/sys/kernel/sched_upmigrate_min_nice 19
 
     # Enable sched guided freq control
-    write /sys/devices/system/cpu/cpufreq/interactive/use_sched_load 1
-    write /sys/devices/system/cpu/cpufreq/interactive/use_migration_notif 1
     write /proc/sys/kernel/sched_freq_inc_notify 200000
     write /proc/sys/kernel/sched_freq_dec_notify 200000
 
