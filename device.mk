@@ -237,7 +237,9 @@ PRODUCT_BOOT_JARS += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
 
 # IRSC
 PRODUCT_COPY_FILES += \
