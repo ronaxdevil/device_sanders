@@ -29,11 +29,27 @@ on init
     setprop ro.hw.dualsim ${ro.boot.dualsim}
     setprop ro.hw.device ${ro.boot.device}
     setprop ro.hw.radio ${ro.boot.radio}
+    setprop ro.hw.sku ${ro.boot.hardware.sku}
     setprop ro.hw.fps true
     setprop ro.hw.imager 13MP
     setprop ro.product.manufacturer motorola
     setprop ro.product.model Moto G (5S) Plus
     setprop ro.product.vendor.model Moto G (5S) Plus
+
+on property:ro.hw.sku=XT1806
+    setprop ro.hw.ecompass true
+    setprop ro.hw.nfc false
+    setprop ro.hw.dtv false
+
+on property:ro.hw.sku=XT1802
+    setprop ro.hw.ecompass false
+    setprop ro.hw.nfc true
+    setprop ro.hw.dtv true
+
+on property:ro.hw.sku=XT1804
+    setprop ro.hw.ecompass false
+    setprop ro.hw.nfc true
+    setprop ro.hw.dtv false
 
 on property:ro.hw.dualsim=true
     setprop persist.radio.multisim.config dsds
