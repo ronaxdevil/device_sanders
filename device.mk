@@ -362,6 +362,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-oem.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-oem.xml \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/qti_whitelist.xml
 
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.fm.sh \
