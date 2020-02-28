@@ -320,6 +320,10 @@ on boot
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
     chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
 
+    # FPS Info
+    chown system graphics /sys/class/graphics/fb0/measured_fps
+    chmod 0666 /sys/class/graphics/fb0/measured_fps
+
     # cpusets on boot
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/top-app/boost/cpus 4-7
