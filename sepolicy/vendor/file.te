@@ -55,3 +55,6 @@ type camera_socket, file_type, data_file_type, core_data_file_type;
 type sysfs_screen_off_gestures, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_fpc_proximity, sysfs_type, fs_type;
 type theme_data_file, file_type, data_file_type;
+
+# FPS Info
+type sysfs_fps, sysfs_type, fs_type;
