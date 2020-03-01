@@ -137,3 +137,6 @@
 
 # Files in fsg
 /fsg(/.*)?               u:object_r:fsg_file:s0
+
+# FPS Info
+/sys/devices/virtual/graphics/fb0/measured_fps                              u:object_r:sysfs_fps:s0
