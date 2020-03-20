@@ -156,7 +156,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
-    vendor.video.disable.ubwc=1
+    vendor.video.disable.ubwc=1 \
+    persist.sys.wfd.nohdcp=1 \
+    vendor.gralloc.disable_wb_ubwc=1
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -440,6 +442,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     spectrum.support=1 \
     persist.spectrum.kernel=Parallax
+
+# SurfaceFlinger sensor props
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 
 # Boot
 PRODUCT_PROPERTY_OVERRIDES += \

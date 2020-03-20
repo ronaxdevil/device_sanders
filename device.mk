@@ -147,7 +147,10 @@ PRODUCT_PACKAGES += \
     libgenlock \
     libtinyxml \
     libdisplayconfig \
+    libdisplayconfig.vendor \
+    libqdMetaData \
     libqdMetaData.system \
+    libqdMetaData.vendor \
     vendor.display.config@1.0
 
 PRODUCT_PACKAGES += android.hardware.media.omx
@@ -498,6 +501,10 @@ PRODUCT_PACKAGES += \
 # Wi-Fi Display
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+PRODUCT_PACKAGES += \
+    libnl \
+    libwfdaac
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
