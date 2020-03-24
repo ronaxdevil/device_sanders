@@ -137,3 +137,6 @@
 
 # Files in fsg
 /fsg(/.*)?               u:object_r:fsg_file:s0
+
+# Dolby
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
