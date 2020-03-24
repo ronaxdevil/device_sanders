@@ -144,3 +144,5 @@
 # Backlight
 /sys/module/mdss_fb/parameters/backlight_dimmer                               u:object_r:sysfs_backlight:s0
 
+# Dolby
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
