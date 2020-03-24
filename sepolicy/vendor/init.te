@@ -67,3 +67,7 @@ allow init system_file:file relabelfrom;
 
 # Screen off gestures
 allow init sysfs_screen_off_gestures:file { rw_file_perms setattr };
+
+allow init vendor_data_file:file lock;
+allow init hal_audio_default:binder call;
+allow init platform_app:binder call;
