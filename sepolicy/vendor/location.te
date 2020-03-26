@@ -1,0 +1,2 @@
+allow location wcnss_prop:file { getattr open read };
+allow location sysfs:file read;
