@@ -32,3 +32,11 @@ if [ "$sku" = "XT1804" ]; then
 else
     rm /vendor/etc/thermal-engine-INDIA.conf
 fi
+
+if [ -e /sdcard/gapps-config-sanders.txt ]; then
+    # Move gapps config file to sdcard after deleting previous one
+    rm -r /sdcard/gapps-config-sanders.txt
+    mv /vendor/etc/gapps-config-sanders.txt /sdcard/gapps-config-sanders.txt
+else
+    mv /vendor/etc/gapps-config-sanders.txt /sdcard/gapps-config-sanders.txt
+fi

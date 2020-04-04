@@ -506,6 +506,10 @@ PRODUCT_PACKAGES += \
     libnl \
     libwfdaac
 
+# GApps-Config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gapps-config.txt:$(TARGET_COPY_OUT_VENDOR)/etc/gapps-config-sanders.txt
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
