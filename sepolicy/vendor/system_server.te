@@ -22,3 +22,8 @@ allow system_server adb_data_file:file { getattr open read };
 allow system_server dalvikcache_data_file:file { execute write };
 
 allow system_server persist_camera_prop:file read;
+
+# Screen off gestures
+allow system_server sysfs_screen_off_gestures:dir search;
+allow system_server sysfs_screen_off_gestures:file rw_file_perms;
+

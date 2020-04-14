@@ -64,3 +64,6 @@ allow init sysfs:file setattr;
 allow init system_file:dir relabelfrom;
 allow init shell_exec:file execute_no_trans;
 allow init system_file:file relabelfrom;
+
+# Screen off gestures
+allow init sysfs_screen_off_gestures:file { rw_file_perms setattr };

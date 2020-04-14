@@ -24,3 +24,6 @@ allow system_app hal_atfwd_hwservice:hwservice_manager add;
 get_prop(system_app, spectrum_prop);
 set_prop(system_app, spectrum_prop);
 
+# Screen off gestures
+allow system_app sysfs_screen_off_gestures:dir search;
+allow system_app sysfs_screen_off_gestures:file rw_file_perms;
