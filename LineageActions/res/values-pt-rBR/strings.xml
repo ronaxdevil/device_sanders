@@ -18,10 +18,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Title and summary -->
     <string name="moto_actions_title">Moto Ações</string>
+    <string name="moto_actions_summary">a quest de fest</string>
 
     <!-- Device gestures -->
     <string name="device_gestures_title">Gestos do dispositivo</string>
-    <string name="device_gestures_summary">Gerenciar os gestos do dispositivo</string>
+    <string name="device_gesturess_summary">Gerenciar os gestos do dispositivo</string>
 
     <!-- Ambient display gestures -->
     <string name="ambient_display_manage_summary">Gerenciar os gestos da tela ambiente</string>

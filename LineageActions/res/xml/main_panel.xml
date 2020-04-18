@@ -21,7 +21,7 @@
     <Preference
         android:key="gestures"
         android:title="@string/device_gestures_title"
-        android:summary="@string/device_gestures_summary"
+        android:summary="@string/device_gesturess_summary"
         android:icon="@drawable/ic_settings_gestures">
             <intent
                 android:targetPackage="org.lineageos.settings.device"
