@@ -46,7 +46,7 @@
         <Preference
         android:key="gestures"
         android:title="@string/device_gestures_title"
-        android:summary="@string/device_gestures_summary"
+        android:summary="@string/device_gesturess_summary"
         android:icon="@drawable/ic_settings_gesturess">
             <intent
                 android:targetPackage="com.moto.actions"
