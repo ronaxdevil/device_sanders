@@ -70,7 +70,6 @@
         <activity
             android:name=".ActionsPreferenceActivity"
             android:label="@string/moto_actions_title"
-            android:summary="@string/moto_actions_summary"
             android:theme="@style/MotoActions">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -86,7 +85,7 @@
                 android:resource="@drawable/ic_settings_gestures_dashboard" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:resource="@string/device_gestures_summary" />
+                android:resource="@string/moto_actions_summary" />
         </activity>
 
         <activity
