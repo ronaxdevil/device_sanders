@@ -145,5 +145,8 @@
 /sys/android_touch/gesture_swipe_right                   u:object_r:sysfs_screen_off_gestures:s0
 /sys/android_touch/gesture_swipe_left                    u:object_r:sysfs_screen_off_gestures:s0
 /sys/android_touch/gesture_swipe_down                    u:object_r:sysfs_screen_off_gestures:s0
-/sys/android_touch/gesture_swipe_up                      u:object_r:sysfs_screen_off_gestures:s0y
+/sys/android_touch/gesture_swipe_up                      u:object_r:sysfs_screen_off_gestures:s0
+
+# Backlight
+/sys/module/mdss_fb/parameters/backlight_dimmer                               u:object_r:sysfs_backlight:s0
 

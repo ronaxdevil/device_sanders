@@ -61,3 +61,6 @@ type sysfs_fps, sysfs_type, fs_type;
 # Screen off gestures
 type sysfs_screen_off_gestures, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_doubletap, sysfs_type, fs_type;
+
+# Backlight dimmer
+type sysfs_backlight, sysfs_type, fs_type;
