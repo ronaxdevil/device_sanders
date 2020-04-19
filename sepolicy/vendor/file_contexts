@@ -140,3 +140,7 @@
 
 # FPS Info
 /sys/devices/virtual/graphics/fb0/measured_fps                              u:object_r:sysfs_fps:s0
+
+# Backlight
+/sys/module/mdss_fb/parameters/backlight_dimmer                               u:object_r:sysfs_backlight:s0
+

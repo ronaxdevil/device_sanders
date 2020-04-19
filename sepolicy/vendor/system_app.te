@@ -25,3 +25,6 @@ allow system_app hal_atfwd_hwservice:hwservice_manager add;
 allow system_app spectrum_prop:property_service set;
 get_prop(system_app, spectrum_prop);
 
+# Backlight dimmer
+allow system_app sysfs_backlight:file { open read getattr write };
+
