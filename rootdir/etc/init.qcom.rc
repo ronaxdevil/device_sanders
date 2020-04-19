@@ -324,6 +324,10 @@ on boot
     chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
     chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
 
+    # Backlight Dimmer
+    chown system system /sys/module/mdss_fb/parameters/backlight_dimmer
+    chmod 0660 /sys/module/mdss_fb/parameters/backlight_dimmer
+
     # FPS Info
     chown system graphics /sys/class/graphics/fb0/measured_fps
     chmod 0666 /sys/class/graphics/fb0/measured_fps
