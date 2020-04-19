@@ -277,6 +277,10 @@ on boot
     chown system radio /sys/android_touch/gesture_swipe_up
     chmod 0660 /sys/android_touch/gesture_swipe_up
 
+    # Vibrator permissions
+    chown root system /sys/devices/virtual/timed_output/vibrator/vtg_level
+    chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level
+
     # Display
     chown system graphics /sys/class/graphics/fb1/hpd
     chmod 0664 /sys/class/graphics/fb1/hpd
