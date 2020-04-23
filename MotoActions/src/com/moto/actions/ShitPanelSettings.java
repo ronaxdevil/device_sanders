@@ -48,17 +48,10 @@ import com.moto.actions.R;
 public class ShitPanelSettings extends PreferenceActivity implements
                                   Preference.OnPreferenceChangeListener {
 
-    public static final String KEY_VIBSTRENGTH = "vib_strength";
-    public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
-    public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
-
     public static final String KEY_DCDIM_SWITCH = "dcdim";
     private static final String SPECTRUM_KEY = "spectrum";
     private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
-    private VibratorStrengthPreference mVibratorStrength;
-    private VibratorCallStrengthPreference mVibratorCallStrength;
-    private VibratorNotifStrengthPreference mVibratorNotifStrength;
     private TwoStatePreference mDCDimSwitch;
     private ListPreference mSpectrum;
 
@@ -66,21 +59,6 @@ public class ShitPanelSettings extends PreferenceActivity implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.main_panel);
-
-        mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
-        if (mVibratorStrength != null) {
-            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
-        }
-
-        mVibratorCallStrength = (VibratorCallStrengthPreference) findPreference(KEY_CALL_VIBSTRENGTH);
-        if (mVibratorCallStrength != null) {
-            mVibratorCallStrength.setEnabled(VibratorCallStrengthPreference.isSupported());
-        }
-
-        mVibratorNotifStrength = (VibratorNotifStrengthPreference) findPreference(KEY_NOTIF_VIBSTRENGTH);
-        if (mVibratorNotifStrength != null) {
-            mVibratorNotifStrength.setEnabled(VibratorNotifStrengthPreference.isSupported());
-        }
 
         mDCDimSwitch = (TwoStatePreference) findPreference(KEY_DCDIM_SWITCH);
         mDCDimSwitch.setOnPreferenceChangeListener(new DCDimSwitch());

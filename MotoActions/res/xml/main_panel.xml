@@ -106,23 +106,4 @@
 		android:targetPackage="com.moto.actions"
 		android:targetClass="com.moto.actions.ShitPanelSettings" />         
    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/category_vibrator">
-        <com.moto.actions.VibratorStrengthPreference
-            android:key="vib_strength"
-            android:iconSpaceReserved="false"
-            android:title="@string/vib_strength_title_head"
-            android:summary="@string/vib_strength_summary_head" />
-        <com.moto.actions.VibratorCallStrengthPreference
-            android:key="vib_call_strength"
-            android:iconSpaceReserved="false"
-            android:title="@string/vib_call_strength_title_head"
-            android:summary="@string/vib_call_strength_summary_head" />
-        <com.moto.actions.VibratorNotifStrengthPreference
-            android:key="vib_notif_strength"
-            android:iconSpaceReserved="false"
-            android:title="@string/vib_notif_strength_title_head"
-            android:summary="@string/vib_notif_strength_summary_head" />
-    </PreferenceCategory>
 </PreferenceScreen>
