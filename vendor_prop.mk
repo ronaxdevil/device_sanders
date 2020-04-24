@@ -163,8 +163,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
     vendor.video.disable.ubwc=1 \
-    persist.sys.wfd.nohdcp=1 \
-    vendor.gralloc.disable_wb_ubwc=1
+    persist.sys.wfd.nohdcp=1
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
