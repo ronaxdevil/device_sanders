@@ -1,1 +1,2 @@
 genfscon sysfs /sys/android_touch/doubletap2wake                 u:object_r:sysfs_doubletap:s0
+
