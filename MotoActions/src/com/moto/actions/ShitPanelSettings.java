@@ -49,40 +49,17 @@ import com.moto.actions.R;
 public class ShitPanelSettings extends PreferenceActivity implements
                                   Preference.OnPreferenceChangeListener {
 
-    public static final String KEY_VIBSTRENGTH = "vib_strength";
-    public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
-    public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
-
-    private static final String SPECTRUM_KEY = "spectrum";
+private static final String SPECTRUM_KEY = "spectrum";
     private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
-    private VibratorStrengthPreference mVibratorStrength;
-    private VibratorCallStrengthPreference mVibratorCallStrength;
-    private VibratorNotifStrengthPreference mVibratorNotifStrength;
-    private ListPreference mSpectrum;
+private ListPreference mSpectrum;
 
 @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.main_panel);
 
-        mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
-        if (mVibratorStrength != null) {
-            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
-        }
-
-        mVibratorCallStrength = (VibratorCallStrengthPreference) findPreference(KEY_CALL_VIBSTRENGTH);
-        if (mVibratorCallStrength != null) {
-            mVibratorCallStrength.setEnabled(VibratorCallStrengthPreference.isSupported());
-        }
-
-        mVibratorNotifStrength = (VibratorNotifStrengthPreference) findPreference(KEY_NOTIF_VIBSTRENGTH);
-        if (mVibratorNotifStrength != null) {
-            mVibratorNotifStrength.setEnabled(VibratorNotifStrengthPreference.isSupported());
-        }
-
-
-        mSpectrum = (ListPreference) findPreference(SPECTRUM_KEY);
+ mSpectrum = (ListPreference) findPreference(SPECTRUM_KEY);
         if( mSpectrum != null ) {
             mSpectrum.setValue(SystemProperties.get(SPECTRUM_SYSTEM_PROPERTY, "0"));
             mSpectrum.setOnPreferenceChangeListener(this);

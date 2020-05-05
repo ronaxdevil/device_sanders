@@ -32,9 +32,6 @@ import com.moto.actions.DisplayCalibration;
 import com.moto.actions.util.FileUtils;
 import com.moto.actions.actions.Constants;
 import com.moto.actions.ServiceWrapper.LocalBinder;
-import com.moto.actions.VibratorStrengthPreference ;
-import com.moto.actions.VibratorCallStrengthPreference ;
-import com.moto.actions.VibratorNotifStrengthPreference ;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     static final String TAG = "MotoActions";
@@ -56,9 +53,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         }
 
         context.startService(new Intent(context, ServiceWrapper.class));
-        VibratorStrengthPreference.restore(context);
-        VibratorCallStrengthPreference.restore(context);
-        VibratorNotifStrengthPreference.restore(context);
         new DiracUtils(context).onBootCompleted();
             DisplayCalibration.restore(context);
     }
