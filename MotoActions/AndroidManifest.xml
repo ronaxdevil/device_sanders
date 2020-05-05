@@ -102,11 +102,6 @@
             android:exported="true">
         </activity>
 
-        <activity
-            android:name=".ScreenOffGestureSettingsActivity"
-            android:label="@string/screen_off_gestures_title"
-            android:theme="@style/MotoActions">
-        </activity>
         <!-- Display Calibration -->
         <activity
             android:name="com.moto.actions.DisplayCalibration"
