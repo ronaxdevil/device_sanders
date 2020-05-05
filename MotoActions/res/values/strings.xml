@@ -194,9 +194,6 @@
     <string name="obsanity">Obsanity</string>
     <string name="obsanity_ips">Obsanity IPS</string>
 
-    <string name="dcdim_mode_summary"></string>
-    <string name="dcdim_mode_title">DC Dimmer</string>
-
     <!-- Vibration Strength -->
     <string name="category_vibrator">Vibrator</string>
     <string name="vib_strength_title_head">System Strength</string>

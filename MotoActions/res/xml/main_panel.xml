@@ -38,12 +38,6 @@
                 android:targetPackage="com.moto.actions"
                 android:targetClass="com.moto.actions.DisplayCalibration" />
         </Preference>
-
-        <SwitchPreference
-            android:key="dcdim"
-            android:summary="@string/dcdim_mode_summary"
-            android:title="@string/dcdim_mode_title"
-            android:defaultValue="false" />
     </PreferenceCategory>
 
 
