@@ -293,6 +293,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MotoActions
 
+# MayhemParts
+PRODUCT_PACKAGES += \
+    MayhemParts
+
 # Netutils
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
