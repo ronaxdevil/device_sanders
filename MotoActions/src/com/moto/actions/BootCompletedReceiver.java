@@ -33,6 +33,9 @@ import com.moto.actions.util.FileUtils;
 import com.moto.actions.DCDimSwitch;
 import com.moto.actions.actions.Constants;
 import com.moto.actions.ServiceWrapper.LocalBinder;
+import com.moto.actions.VibratorStrengthPreference ;
+import com.moto.actions.VibratorCallStrengthPreference ;
+import com.moto.actions.VibratorNotifStrengthPreference ;
 import com.moto.actions.ShitPanelSettings ;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -74,6 +77,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         context.startService(new Intent(context, ServiceWrapper.class));
         boolean enabled = sharedPrefs.getBoolean(ShitPanelSettings.KEY_DCDIM_SWITCH, false);
         restore(DCDimSwitch.getFile(), enabled);
+        VibratorStrengthPreference.restore(context);
+        VibratorCallStrengthPreference.restore(context);
+        VibratorNotifStrengthPreference.restore(context);
         new DiracUtils(context).onBootCompleted();
             DisplayCalibration.restore(context);
     }
