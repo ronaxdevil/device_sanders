@@ -101,6 +101,7 @@
             android:theme="@style/MotoActions"
             android:exported="true">
         </activity>
+
         <!-- Display Calibration -->
         <activity
             android:name="com.moto.actions.DisplayCalibration"
@@ -109,13 +110,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
-        </activity>
-
-	<activity
-            android:name=".ScreenOffGestureSettingsActivity"
-            android:label="@string/screen_off_gestures_title"
-            android:theme="@style/MotoActions"
-            android:exported="true">
         </activity>
         
         <!-- Dirac Sounds -->
