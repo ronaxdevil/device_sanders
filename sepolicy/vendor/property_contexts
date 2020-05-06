@@ -8,4 +8,6 @@ persist.audio.dirac.               u:object_r:dirac_prop:s0
 persist.vendor.dolby.loglevel      u:object_r:vendor_dolby_loglevel_prop:s0
 # Spectrum
 persist.spectrum.profile           u:object_r:spectrum_prop:s0
+# GPUboost
+persist.gpuboost.profile           u:object_r:gpuboost_prop:s0
 
