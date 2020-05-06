@@ -386,7 +386,9 @@ PRODUCT_PACKAGES += \
     init.dtv.rc \
     init.dtv.sh \
     init.spectrum.rc \
-    init.spectrum.sh
+    init.spectrum.sh \
+    init.gpuboost.rc \
+    init.gpuboost.sh
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/rootdir/etc/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc

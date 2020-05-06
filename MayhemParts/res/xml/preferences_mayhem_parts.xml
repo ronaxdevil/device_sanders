@@ -65,6 +65,29 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="boost"
+        android:title="@string/Boost_title" >
+
+        <com.moto.mayhemparts.preferences.SecureSettingSwitchPreference
+            android:key="touchboost"
+            android:defaultValue="true"
+            android:title="@string/touchboost_title"
+            android:icon="@drawable/ic_boost"
+            android:summary="@string/touchboost_summary" />
+
+        <com.moto.mayhemparts.preferences.SecureSettingListPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/gpuboost_dialogTitle"
+            android:entries="@array/gpuboost_profiles"
+            android:entryValues="@array/gpuboost_values"
+            android:key="gpuboost"
+            android:summary="@string/gpuboost_summary"
+            android:icon="@drawable/ic_gpuboost" 
+            android:title="@string/gpuboost_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="audio"
         android:title="@string/audio_title">
 
@@ -97,7 +120,7 @@
     <PreferenceCategory
         android:key="usb_fastcharge"
         android:title="@string/usb_fastcharge_title" >
-    <com.moto.mayhemparts.preferences.SecureSettingSwitchPreference
+        <com.moto.mayhemparts.preferences.SecureSettingSwitchPreference
             android:key="fastcharge"
             android:defaultValue="true"
             android:title="@string/fastcharge_title"
@@ -105,14 +128,4 @@
             android:summary="@string/fastcharge_summary" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="boost"
-        android:title="@string/boost_title" >
-    <com.moto.mayhemparts.preferences.SecureSettingSwitchPreference
-            android:key="touchboost"
-            android:defaultValue="true"
-            android:title="@string/touchboost_title"
-            android:icon="@drawable/ic_boost"
-            android:summary="@string/touchboost_summary" />
-    </PreferenceCategory>
 </PreferenceScreen>
