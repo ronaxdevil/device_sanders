@@ -66,4 +66,8 @@
     <string name="fps_info_title">FPS Info Overlay</string>
     <string name="fps_info_summary">Show overlay with current frames per second</string>
 
+    <!-- Touchboost -->
+    <string name="Boost_title">Touchboost</string>
+    <string name="Touchboost_title">Enable Touchboost</string>
+    <string name="Touchboost_summary">Boost cpu when touch detected for soomth experience</string>
 </resources>

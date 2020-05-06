@@ -293,6 +293,10 @@ on boot
     chmod 0660 /sys/kernel/sound_control/mic_gain
     chmod 0660 /sys/kernel/sound_control/speaker_gain
 
+    # Touchboost
+    chown system system /sys/module/msm_performance/parameters/touchboost
+    chmod 0660 /sys/module/msm_performance/parameters/touchboost
+
     # Display
     chown system graphics /sys/class/graphics/fb1/hpd
     chmod 0664 /sys/class/graphics/fb1/hpd
