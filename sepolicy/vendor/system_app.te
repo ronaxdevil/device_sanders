@@ -35,3 +35,5 @@ allow system_app sysfs_hgain:file { open read getattr write };
 allow system_app sysfs_mgain:file { open read getattr write };
 allow system_app sysfs_fcharge:file { open read getattr write };
 allow system_app sysfs_fps:file rw_file_perms;
+
+allow system_app sysfs_touchboost:file { open read getattr write };

@@ -67,3 +67,6 @@ type sysfs_sgain, sysfs_type, fs_type;
 type sysfs_hgain, sysfs_type, fs_type;
 type sysfs_mgain, sysfs_type, fs_type;
 type sysfs_fcharge, sysfs_type, fs_type;
+
+# Touchboost
+type sysfs_touchboost, sysfs_type, fs_type;

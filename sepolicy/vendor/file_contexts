@@ -153,3 +153,5 @@
 /sys/kernel/sound_control/mic_gain			 u:object_r:sysfs_mgain:s0
 /sys/kernel/fast_charge/force_fast_charge		 u:object_r:sysfs_fcharge:s0
 
+# Touchboost
+/sys/module/msm_performance/parameters/touchboost		u:object_r:sysfs_touchboost:s0
