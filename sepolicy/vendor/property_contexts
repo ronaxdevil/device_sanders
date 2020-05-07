@@ -10,4 +10,5 @@ persist.vendor.dolby.loglevel      u:object_r:vendor_dolby_loglevel_prop:s0
 persist.spectrum.profile           u:object_r:spectrum_prop:s0
 # GPUboost
 persist.gpuboost.profile           u:object_r:gpuboost_prop:s0
-
+# cpuboost
+persist.cpuboost.profile           u:object_r:cpuboost_prop:s0

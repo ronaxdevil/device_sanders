@@ -14,3 +14,5 @@ type spectrum_prop, property_type;
 type vendor_dolby_loglevel_prop, property_type;
 # GPUboost
 type gpuboost_prop, property_type;
+# Cpuboost
+type cpuboost_prop, property_type;

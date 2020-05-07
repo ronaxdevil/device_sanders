@@ -388,7 +388,9 @@ PRODUCT_PACKAGES += \
     init.spectrum.rc \
     init.spectrum.sh \
     init.gpuboost.rc \
-    init.gpuboost.sh
+    init.gpuboost.sh \
+    init.cpuboost.rc \
+    init.cpuboost.sh
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/rootdir/etc/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
