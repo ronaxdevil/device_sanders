@@ -77,6 +77,16 @@
 
         <com.moto.mayhemparts.preferences.SecureSettingListPreference
             android:defaultValue="0"
+            android:dialogTitle="@string/cpuboost_dialogTitle"
+            android:entries="@array/cpuboost_profiles"
+            android:entryValues="@array/cpuboost_values"
+            android:key="cpuboost"
+            android:summary="@string/cpuboost_summary"
+            android:icon="@drawable/ic_cpuboost" 
+            android:title="@string/cpuboost_title" />
+
+        <com.moto.mayhemparts.preferences.SecureSettingListPreference
+            android:defaultValue="0"
             android:dialogTitle="@string/gpuboost_dialogTitle"
             android:entries="@array/gpuboost_profiles"
             android:entryValues="@array/gpuboost_values"
