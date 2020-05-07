@@ -1,6 +1,7 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
  * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2020 ronaxdevil <pratabidya.007@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +48,12 @@ public class BootReceiver extends BroadcastReceiver {
                 DeviceSettings.PREF_USB_FASTCHARGE, 0));
         FileUtils.setValue(DeviceSettings.MSM_TOUCHBOOST_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_MSM_TOUCHBOOST, 0));
+        FileUtils.setValue(DeviceSettings.TORCH_1_BRIGHTNESS_PATH,
+                Settings.Secure.getInt(context.getContentResolver(),
+                        DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
+        FileUtils.setValue(DeviceSettings.TORCH_2_BRIGHTNESS_PATH,
+                Settings.Secure.getInt(context.getContentResolver(),
+                        DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
         boolean enabled = sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false);
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));

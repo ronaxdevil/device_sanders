@@ -299,6 +299,12 @@ on boot
     chown system system /sys/module/msm_performance/parameters/touchboost
     chmod 0660 /sys/module/msm_performance/parameters/touchboost
 
+    # Torch permissions
+    chown system system /sys/devices/soc/soc:qcom,camera-flash/driver/soc:qcom,camera-flash/leds/torch-light0/max_brightness
+    chown system system /sys/devices/soc/soc:qcom,camera-flash/driver/soc:qcom,camera-flash/leds/torch-light1/max_brightness
+    chmod 0660 /sys/devices/soc/soc:qcom,camera-flash/driver/soc:qcom,camera-flash/leds/torch-light0/max_brightness
+    chmod 0660 /sys/devices/soc/soc:qcom,camera-flash/driver/soc:qcom,camera-flash/leds/torch-light1/max_brightness
+
     # Display
     chown system graphics /sys/class/graphics/fb1/hpd
     chmod 0664 /sys/class/graphics/fb1/hpd

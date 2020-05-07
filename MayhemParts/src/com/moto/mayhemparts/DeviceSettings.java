@@ -66,6 +66,12 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_CPUBOOST = "cpuboost";
     public static final String CPUBOOST_SYSTEM_PROPERTY = "persist.cpuboost.profile";
 
+    final static String PREF_TORCH_BRIGHTNESS = "torch_brightness";
+    public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/devices/soc/soc:qcom," +
+            "camera-flash/driver/soc:qcom,camera-flash/leds/torch-light0/max_brightness";
+    public static final String TORCH_2_BRIGHTNESS_PATH = "/sys/devices/soc/soc:qcom," +
+            "camera-flash/driver/soc:qcom,camera-flash/leds/torch-light1/max_brightness";
+
     private VibratorStrengthPreference mVibratorStrength;
     private SecureSettingListPreference mSPECTRUM;
     private CustomSeekBarPreference mHeadphoneGain;
@@ -76,6 +82,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mTouchboost;
     private SecureSettingListPreference mGPUBOOST;
     private SecureSettingListPreference mCPUBOOST;
+    private CustomSeekBarPreference mTorchBrightness;
     private static Context mContext;
 
     @Override
@@ -140,6 +147,11 @@ public class DeviceSettings extends PreferenceFragment implements
         mCPUBOOST.setSummary(mCPUBOOST.getEntry());
         mCPUBOOST.setOnPreferenceChangeListener(this);
 
+        mTorchBrightness = (CustomSeekBarPreference) findPreference(PREF_TORCH_BRIGHTNESS);
+        mTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH) &&
+                FileUtils.fileWritable(TORCH_2_BRIGHTNESS_PATH));
+        mTorchBrightness.setOnPreferenceChangeListener(this);
+
         SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
         fpsInfo.setOnPreferenceChangeListener(this);
@@ -185,6 +197,11 @@ public class DeviceSettings extends PreferenceFragment implements
                 mCPUBOOST.setValue((String) value);
                 mCPUBOOST.setSummary(mCPUBOOST.getEntry());
                 FileUtils.setStringProp(CPUBOOST_SYSTEM_PROPERTY, (String) value);
+                break;
+
+            case PREF_TORCH_BRIGHTNESS:
+                FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
+                FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, (int) value);
                 break;
 
             case PREF_KEY_FPS_INFO:

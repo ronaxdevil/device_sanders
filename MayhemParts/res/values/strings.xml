@@ -93,4 +93,8 @@
     <string name="cpuboost_low">Low</string>
     <string name="cpuboost_disable">Disable</string>
 
+    <!-- Torch Brightness -->
+    <string name="torch_title">Torch</string>
+    <string name="torch_brightness_title">Brightness</string>
+
 </resources>
