@@ -132,8 +132,9 @@ public class DeviceSettings extends PreferenceFragment implements
 
         if (FileUtils.fileWritable(MSM_TOUCHBOOST_PATH)) {
             mTouchboost = (SecureSettingSwitchPreference) findPreference(PREF_MSM_TOUCHBOOST);
-            mTouchboost.setChecked(FileUtils.getFileValueAsBoolean(MSM_TOUCHBOOST_PATH, true));
-            mTouchboost.setOnPreferenceChangeListener(this);
+            mTouchboost.setEnabled(Touchboost.isSupported());
+            mTouchboost.setChecked(Touchboost.isCurrentlyEnabled(this.getContext()));
+            mTouchboost.setOnPreferenceChangeListener(new Touchboost(getContext()));
         } else {
             getPreferenceScreen().removePreference(findPreference(CATEGORY_TOUCHBOOST));
         }
@@ -178,10 +179,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
             case PREF_SPEAKER_GAIN:
                 FileUtils.setValue(SPEAKER_GAIN_PATH, (int) value);
-                break;
-
-            case PREF_MSM_TOUCHBOOST:
-                FileUtils.setValue(MSM_TOUCHBOOST_PATH, (boolean) value);
                 break;
 
             case PREF_GPUBOOST:
