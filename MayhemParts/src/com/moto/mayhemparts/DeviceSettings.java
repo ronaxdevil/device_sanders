@@ -67,10 +67,10 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String CPUBOOST_SYSTEM_PROPERTY = "persist.cpuboost.profile";
 
     final static String PREF_TORCH_BRIGHTNESS = "torch_brightness";
-    public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/devices/soc/soc:qcom," +
-            "camera-flash/driver/soc:qcom,camera-flash/leds/torch-light0/max_brightness";
-    public static final String TORCH_2_BRIGHTNESS_PATH = "/sys/devices/soc/soc:qcom," +
-            "camera-flash/driver/soc:qcom,camera-flash/leds/torch-light1/max_brightness";
+    public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/devices/soc/qpnp-flash-led-23" +
+            "/driver/qpnp-flash-led-23/leds/led:torch_0/max_brightness";
+    public static final String TORCH_2_BRIGHTNESS_PATH = "/sys/devices/soc/qpnp-flash-led-23" +
+            "/driver/qpnp-flash-led-23/leds/led:torch_1/max_brightness";
 
     private VibratorStrengthPreference mVibratorStrength;
     private SecureSettingListPreference mSPECTRUM;

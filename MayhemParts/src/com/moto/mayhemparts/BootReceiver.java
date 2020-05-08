@@ -50,10 +50,10 @@ public class BootReceiver extends BroadcastReceiver {
                 DeviceSettings.PREF_MSM_TOUCHBOOST, 0));
         FileUtils.setValue(DeviceSettings.TORCH_1_BRIGHTNESS_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
-                        DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
+                        DeviceSettings.PREF_TORCH_BRIGHTNESS, 150));
         FileUtils.setValue(DeviceSettings.TORCH_2_BRIGHTNESS_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
-                        DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
+                        DeviceSettings.PREF_TORCH_BRIGHTNESS, 150));
         boolean enabled = sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false);
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
