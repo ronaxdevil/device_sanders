@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 import android.provider.Settings;
+import com.moto.mayhemparts.preferences.LedBlinkPreference;
 import com.moto.mayhemparts.preferences.VibratorStrengthPreference;
 
 public class BootReceiver extends BroadcastReceiver {
@@ -35,6 +36,7 @@ public class BootReceiver extends BroadcastReceiver {
         FileUtils.setValue(DeviceSettings.BACKLIGHT_DIMMER_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_BACKLIGHT_DIMMER, 0));
 
+        LedBlinkPreference.restore(context);
         VibratorStrengthPreference.restore(context);
 
         int gain = Settings.Secure.getInt(context.getContentResolver(),
