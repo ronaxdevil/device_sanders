@@ -35,6 +35,7 @@ import com.moto.mayhemparts.preferences.SecureSettingListPreference;
 import com.moto.mayhemparts.preferences.SecureSettingSwitchPreference;
 import com.moto.mayhemparts.preferences.LedBlinkPreference;
 import com.moto.mayhemparts.preferences.VibratorStrengthPreference;
+import com.moto.mayhemparts.preferences.YellowFlashPreference;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -76,6 +77,7 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_CHARGING_LED = "charging_led";
     public static final String CHARGING_LED_PATH = "/sys/devices/soc/leds-atc-20" +
             "/driver/leds-atc-20/leds/charging/max_brightness";
+    public static final String KEY_FLASH = "yellow_flash";
 
     private VibratorStrengthPreference mVibratorStrength;
     private SecureSettingListPreference mSPECTRUM;
@@ -89,6 +91,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingListPreference mCPUBOOST;
     private CustomSeekBarPreference mTorchBrightness;
     private LedBlinkPreference mLedBlink;
+    private YellowFlashPreference mYellowFlash;
     private static Context mContext;
 
     @Override
@@ -163,6 +166,11 @@ public class DeviceSettings extends PreferenceFragment implements
         mLedBlink = (LedBlinkPreference) findPreference(PREF_CHARGING_LED);
         if (mLedBlink != null) {
             mLedBlink.setEnabled(LedBlinkPreference.isSupported());
+        }
+
+        mYellowFlash = (YellowFlashPreference) findPreference(KEY_FLASH);
+        if (mYellowFlash != null) {
+            mYellowFlash.setEnabled(YellowFlashPreference.isSupported());
         }
 
         SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);

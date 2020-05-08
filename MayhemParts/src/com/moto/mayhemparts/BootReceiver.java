@@ -26,6 +26,7 @@ import androidx.preference.PreferenceManager;
 import android.provider.Settings;
 import com.moto.mayhemparts.preferences.LedBlinkPreference;
 import com.moto.mayhemparts.preferences.VibratorStrengthPreference;
+import com.moto.mayhemparts.preferences.YellowFlashPreference;
 
 public class BootReceiver extends BroadcastReceiver {
 
@@ -38,6 +39,7 @@ public class BootReceiver extends BroadcastReceiver {
 
         LedBlinkPreference.restore(context);
         VibratorStrengthPreference.restore(context);
+        YellowFlashPreference.restore(context);
 
         int gain = Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_HEADPHONE_GAIN, 4);

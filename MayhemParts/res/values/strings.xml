@@ -99,4 +99,8 @@
 
     <string name="chargingled_title">Charging LED</string>
     <string name="led_blinking_title">Blinking Intensity</string>
+
+    <string name="cameraflash_title">Camera Flash</string>
+    <string name="yellowflash_intensity_title">Yellow Light Intensity</string>
+
 </resources>
