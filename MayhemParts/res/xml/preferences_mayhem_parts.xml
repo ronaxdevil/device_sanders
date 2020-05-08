@@ -124,6 +124,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="cameraflash"
+        android:title="@string/cameraflash_title">
+
+        <com.moto.mayhemparts.preferences.YellowFlashPreference
+            android:defaultValue="80"
+            android:key="yellow_flash"
+            android:icon="@drawable/ic_flash"
+            android:title="@string/yellowflash_intensity_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="audio"
         android:title="@string/audio_title">
 

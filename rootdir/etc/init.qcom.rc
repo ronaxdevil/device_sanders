@@ -303,6 +303,10 @@ on boot
     chown system system /sys/devices/soc/leds-atc-20/driver/leds-atc-20/leds/charging/max_brightness
     chmod 0660 /sys/devices/soc/leds-atc-20/driver/leds-atc-20/leds/charging/max_brightness
 
+    # Yellow light intensity
+    chown system system /sys/devices/soc/qpnp-flash-led-23/driver/qpnp-flash-led-23/leds/led:flash_1/max_brightness
+    chmod 0660 /sys/devices/soc/qpnp-flash-led-23/driver/qpnp-flash-led-23/leds/led:flash_1/max_brightness
+
     # Torch permissions
     chown system system /sys/devices/soc/qpnp-flash-led-23/driver/qpnp-flash-led-23/leds/led:torch_0/max_brightness
     chown system system /sys/devices/soc/qpnp-flash-led-23/driver/qpnp-flash-led-23/leds/led:torch_1/max_brightness

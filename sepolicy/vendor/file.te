@@ -72,6 +72,7 @@ type sysfs_mgain, sysfs_type, fs_type;
 type sysfs_fcharge, sysfs_type, fs_type;
 type sysfs_tbrightness, sysfs_type, fs_type;
 type sysfs_chargeled, sysfs_type, fs_type;
+type sysfs_yintensity, sysfs_type, fs_type;
 
 # Touchboost
 type sysfs_touchboost, sysfs_type, fs_type;
