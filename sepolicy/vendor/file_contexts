@@ -165,3 +165,5 @@
 # Torch brightness control
 /sys/devices/soc/qpnp-flash-led-23/driver/qpnp-flash-led-23/leds/led:torch_0/max_brightness	u:object_r:sysfs_tbrightness:s0
 /sys/devices/soc/qpnp-flash-led-23/driver/qpnp-flash-led-23/leds/led:torch_1/max_brightness	u:object_r:sysfs_tbrightness:s0
+
+/sys/devices/soc/leds-atc-20/driver/leds-atc-20/leds/charging/max_brightness		u:object_r:sysfs_chargeled:s0

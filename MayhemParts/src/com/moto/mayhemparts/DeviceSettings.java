@@ -33,6 +33,7 @@ import androidx.preference.PreferenceCategory;
 import com.moto.mayhemparts.preferences.CustomSeekBarPreference;
 import com.moto.mayhemparts.preferences.SecureSettingListPreference;
 import com.moto.mayhemparts.preferences.SecureSettingSwitchPreference;
+import com.moto.mayhemparts.preferences.LedBlinkPreference;
 import com.moto.mayhemparts.preferences.VibratorStrengthPreference;
 
 public class DeviceSettings extends PreferenceFragment implements
@@ -72,6 +73,10 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String TORCH_2_BRIGHTNESS_PATH = "/sys/devices/soc/qpnp-flash-led-23" +
             "/driver/qpnp-flash-led-23/leds/led:torch_1/max_brightness";
 
+    public static final String PREF_CHARGING_LED = "charging_led";
+    public static final String CHARGING_LED_PATH = "/sys/devices/soc/leds-atc-20" +
+            "/driver/leds-atc-20/leds/charging/max_brightness";
+
     private VibratorStrengthPreference mVibratorStrength;
     private SecureSettingListPreference mSPECTRUM;
     private CustomSeekBarPreference mHeadphoneGain;
@@ -83,6 +88,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingListPreference mGPUBOOST;
     private SecureSettingListPreference mCPUBOOST;
     private CustomSeekBarPreference mTorchBrightness;
+    private LedBlinkPreference mLedBlink;
     private static Context mContext;
 
     @Override
@@ -153,6 +159,11 @@ public class DeviceSettings extends PreferenceFragment implements
         mTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH) &&
                 FileUtils.fileWritable(TORCH_2_BRIGHTNESS_PATH));
         mTorchBrightness.setOnPreferenceChangeListener(this);
+
+        mLedBlink = (LedBlinkPreference) findPreference(PREF_CHARGING_LED);
+        if (mLedBlink != null) {
+            mLedBlink.setEnabled(LedBlinkPreference.isSupported());
+        }
 
         SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
