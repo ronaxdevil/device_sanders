@@ -167,8 +167,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.fm.transmitter=false \
-    vendor.hw.fm.init=0
+    ro.fm.transmitter=false
 
 # HWUI properties
 PRODUCT_PROPERTY_OVERRIDES += \
