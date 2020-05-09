@@ -148,9 +148,6 @@
 /(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
 
 # Mayhemparts
-/sys/kernel/sound_control/speaker_gain			 u:object_r:sysfs_sgain:s0
-/sys/kernel/sound_control/headphone_gain		 u:object_r:sysfs_hgain:s0
-/sys/kernel/sound_control/mic_gain			 u:object_r:sysfs_mgain:s0
 /sys/kernel/fast_charge/force_fast_charge		 u:object_r:sysfs_fcharge:s0
 
 # Touchboost
