@@ -573,7 +573,6 @@ on post-fs-data
 service charger /system/bin/charger
     class charger
     user system
-    capabilities SYS_BOOT
     group system graphics input
     seclabel u:r:charger:s0
 
