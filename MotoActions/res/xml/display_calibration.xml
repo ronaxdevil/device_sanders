@@ -21,16 +21,22 @@
         android:summary="@string/kcal_enabled_summary"
         android:persistent="false" />
 		
-    <com.moto.actions.util.SeekBarPreference
-        android:key="kcal_value"
-        android:title="@string/kcal_value"
+    <PreferenceCategory
+        android:key="cat_preset"
+        android:title="Presets">
+    <ListPreference
+        android:key="presets_list"
+        android:title="@string/presets_list_title"
+        android:summary="%s"
+        android:entries="@array/presets_entries"
+        android:entryValues="@array/presets_values"
         android:dependency="kcal_enabled"
-        android:persistent="false"
-        android:layout="@layout/slider_preference"
-        android:recycleEnabled="false"
-        app:max_value="383"
-        app:min_value="128"
-        app:default_value="255"/>
+        android:defaultValue="0"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_colormanagement"
+        android:title="@string/cat_colormanagement">
 
     <com.moto.actions.util.SeekBarPreference
         android:key="kcal_color_temp"
@@ -42,7 +48,8 @@
         app:max_value="7000"
         app:min_value="1000"
         app:default_value="6400"/>
-		
+    </PreferenceCategory>
+    <PreferenceCategory>	
     <com.moto.actions.util.SeekBarPreference
         android:key="kcal_red"
         android:title="@string/kcal_red"        
@@ -53,7 +60,8 @@
         app:max_value="256"
         app:min_value="0"
         app:default_value="256"/>
-		
+    </PreferenceCategory>
+    <PreferenceCategory>
     <com.moto.actions.util.SeekBarPreference
         android:key="kcal_green"
         android:title="@string/kcal_green"
@@ -64,7 +72,8 @@
         app:max_value="256"
         app:min_value="0"
         app:default_value="256"/>
-		
+    </PreferenceCategory>
+    <PreferenceCategory>
     <com.moto.actions.util.SeekBarPreference
         android:key="kcal_blue"
         android:title="@string/kcal_blue"
@@ -76,6 +85,24 @@
         app:min_value="0"
         app:default_value="256"/>
 		
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_calibration"
+        android:title="@string/cat_calibration">
+
+    <com.moto.actions.util.SeekBarPreference
+        android:key="kcal_value"
+        android:title="@string/kcal_value"
+        android:dependency="kcal_enabled"
+        android:persistent="false"
+        android:layout="@layout/slider_preference"
+        android:recycleEnabled="false"
+        app:max_value="383"
+        app:min_value="128"
+        app:default_value="255"/>
+    </PreferenceCategory>
+    <PreferenceCategory>
     <com.moto.actions.util.SeekBarPreference
         android:key="kcal_contrast"
         android:title="@string/kcal_contrast"
@@ -86,7 +113,8 @@
         app:max_value="384"
         app:min_value="128"
         app:default_value="255"/>
-		
+    </PreferenceCategory>
+    <PreferenceCategory>
     <com.moto.actions.util.SeekBarPreference
         android:key="kcal_saturation"
         android:title="@string/kcal_saturation"
@@ -97,7 +125,8 @@
         app:max_value="383"
         app:min_value="224"
         app:default_value="256"/>
-
+    </PreferenceCategory>
+    <PreferenceCategory>
     <com.moto.actions.util.SeekBarPreference
         android:key="kcal_hue"
         android:title="@string/kcal_hue"
@@ -108,7 +137,10 @@
         app:max_value="1536"
         app:min_value="0"
         app:default_value="0"/>
-		
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="cat_greyscale"
+        android:title="Greyscale Toggle">
     <SwitchPreference
         android:key="kcal_greyscale"
         android:title="@string/kcal_greyscale_title"
@@ -117,14 +149,7 @@
         android:disableDependentsState="true"
         android:persistent="false"/>
 
-    <ListPreference
-        android:key="presets_list"
-        android:title="@string/presets_list_title"
-        android:summary="%s"
-        android:entries="@array/presets_entries"
-        android:entryValues="@array/presets_values"
-        android:dependency="kcal_enabled"
-        android:defaultValue="0"/>
+    </PreferenceCategory>
 
 </PreferenceScreen>
 
