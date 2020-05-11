@@ -22,6 +22,9 @@ import android.view.MenuItem;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
 import androidx.preference.PreferenceFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import static android.provider.Settings.Secure.DOUBLE_TAP_TO_WAKE;
 import static com.moto.actions.actions.Constants.KEY_GESTURE_ENABLE_HAPTIC_FEEDBACK;
@@ -30,6 +33,14 @@ public class ScreenOffGestureSettingsFragment extends PreferenceFragment {
 
     private SwitchPreference mTapToWake;
     private SwitchPreference mHapticFeedback;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        final View view = LayoutInflater.from(getContext()).inflate(R.layout.screenoffgesture, container, false);
+        ((ViewGroup) view).addView(super.onCreateView(inflater, container, savedInstanceState));
+        return view;
+    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
