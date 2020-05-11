@@ -151,6 +151,8 @@
     <string name="kcal_summary">Display color calibration</string>
     <string name="kcal_enabled_title">Enable KCAL</string>
     <string name="kcal_enabled_summary">Turn on display calibration</string>
+    <string name="cat_colormanagement">Color Settings</string>
+    <string name="cat_calibration">Display Calibration</string>
     <string name="kcal_red">Red</string>
     <string name="kcal_green">Green</string>
     <string name="kcal_blue">Blue</string>
