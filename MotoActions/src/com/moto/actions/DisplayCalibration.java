@@ -87,9 +87,6 @@ public class DisplayCalibration extends PreferenceActivity implements
         getActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.display_cal);
 
-        ImageView imageView = (ImageView) findViewById(R.id.calibration_pic);
-        imageView.setImageResource(R.drawable.calibration_png);
-
         addPreferencesFromResource(R.xml.display_calibration);
 
         mKcalEnabled = (SwitchPreference) findPreference(KEY_KCAL_ENABLED);
