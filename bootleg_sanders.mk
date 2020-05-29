@@ -27,16 +27,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, device/motorola/sanders/device.mk)
 
 # Inherit some common Havoc stuff.
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
+BOOTLEGGERS_BUILD_TYPE := Special-Edition
 TARGET_BOOT_ANIMATION_RES := 1080
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sanders
-PRODUCT_NAME := havoc_sanders
+PRODUCT_NAME := bootleg_sanders
 PRODUCT_MODEL := Moto G (5S) Plus
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
@@ -44,6 +45,7 @@ PRODUCT_RELEASE_NAME := sanders
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="Moto G (5S) Plus" \
+    DEVICE_MAINTAINERS="Ronax" \
     PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36-14 63857 release-keys"
 
 # FINGERPRINT
