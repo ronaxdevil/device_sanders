@@ -439,10 +439,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.model=sanders
 
-# Maintainer
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.havoc.maintainer=@Ronax
-
 # Spectrum
 PRODUCT_PROPERTY_OVERRIDES += \
     spectrum.support=1 \
