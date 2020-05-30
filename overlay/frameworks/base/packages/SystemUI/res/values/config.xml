@@ -53,5 +53,9 @@
 
     <!-- Statusbar Burn in protection -->
     <bool name="config_statusBarBurnInProtection">true</bool>
+
+    <!-- do not use H265 encoder for screen recordings -->
+    <bool name="config_useNewScreenRecEncoder">false</bool>
+
 </resources>
 
