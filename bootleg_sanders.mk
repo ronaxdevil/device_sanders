@@ -32,7 +32,7 @@ $(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
-BOOTLEGGERS_BUILD_TYPE := Special-Edition
+BOOTLEGGERS_BUILD_TYPE := Denounce
 TARGET_BOOT_ANIMATION_RES := 1080
 
 ## Device identifier. This must come after all inclusions
