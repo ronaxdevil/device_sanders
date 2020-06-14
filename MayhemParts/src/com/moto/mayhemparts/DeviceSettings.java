@@ -91,6 +91,8 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String CPUCORE_SYSTEM_PROPERTY = "persist.cpucore.profile";
     public static final String PREF_LKM = "lkmprofile";
     public static final String LKM_SYSTEM_PROPERTY = "persist.lkm.profile";
+    public static final String PREF_TCP = "tcpcongestion";
+    public static final String TCP_SYSTEM_PROPERTY = "persist.tcp.profile";
 
     private VibratorStrengthPreference mVibratorStrength;
     private SecureSettingListPreference mSPECTRUM;
@@ -111,6 +113,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mVddRestrict;
     private SecureSettingListPreference mCPUCORE;
     private SecureSettingListPreference mLKM;
+    private SecureSettingListPreference mTCP;
     private static Context mContext;
 
     @Override
@@ -234,6 +237,11 @@ public class DeviceSettings extends PreferenceFragment implements
         mLKM.setSummary(mLKM.getEntry());
         mLKM.setOnPreferenceChangeListener(this);
 
+        mTCP = (SecureSettingListPreference) findPreference(PREF_TCP);
+        mTCP.setValue(FileUtils.getStringProp(TCP_SYSTEM_PROPERTY, "0"));
+        mTCP.setSummary(mTCP.getEntry());
+        mTCP.setOnPreferenceChangeListener(this);
+
         SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
         fpsInfo.setOnPreferenceChangeListener(this);
@@ -304,6 +312,12 @@ public class DeviceSettings extends PreferenceFragment implements
                 mLKM.setValue((String) value);
                 mLKM.setSummary(mLKM.getEntry());
                 FileUtils.setStringProp(LKM_SYSTEM_PROPERTY, (String) value);
+                break;
+
+            case PREF_TCP:
+                mTCP.setValue((String) value);
+                mTCP.setSummary(mTCP.getEntry());
+                FileUtils.setStringProp(TCP_SYSTEM_PROPERTY, (String) value);
                 break;
 
             case PREF_KEY_FPS_INFO:
