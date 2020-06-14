@@ -78,6 +78,9 @@ public class DeviceSettings extends PreferenceFragment implements
             "/driver/leds-atc-20/leds/charging/max_brightness";
     public static final String KEY_FLASH = "yellow_flash";
 
+    public static final String HIGH_PERF_AUDIO = "highperfaudio";
+    public static final String HIGH_AUDIO_PATH = "/sys/module/snd_soc_wcd9330/parameters/high_perf_mode";
+
     private VibratorStrengthPreference mVibratorStrength;
     private SecureSettingListPreference mSPECTRUM;
     private CustomSeekBarPreference mHeadphoneGain;
@@ -91,6 +94,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private CustomSeekBarPreference mTorchBrightness;
     private LedBlinkPreference mLedBlink;
     private YellowFlashPreference mYellowFlash;
+    private SecureSettingSwitchPreference mHighAudio;
     private static Context mContext;
 
     @Override
@@ -118,6 +122,14 @@ public class DeviceSettings extends PreferenceFragment implements
         mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
+        }
+
+        if (FileUtils.fileWritable(HIGH_AUDIO_PATH)) {
+            mHighAudio = (SecureSettingSwitchPreference) findPreference(HIGH_PERF_AUDIO);
+            mHighAudio.setChecked(FileUtils.getFileValueAsBoolean(HIGH_AUDIO_PATH, true));
+            mHighAudio.setOnPreferenceChangeListener(this);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(HIGH_PERF_AUDIO));
         }
 
         mHeadphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
@@ -185,6 +197,10 @@ public class DeviceSettings extends PreferenceFragment implements
                 mSPECTRUM.setValue((String) value);
                 mSPECTRUM.setSummary(mSPECTRUM.getEntry());
                 FileUtils.setStringProp(SPECTRUM_SYSTEM_PROPERTY, (String) value);
+                break;
+
+            case HIGH_PERF_AUDIO:
+                FileUtils.setValue(HIGH_AUDIO_PATH, (boolean) value);
                 break;
 
             case PREF_HEADPHONE_GAIN:

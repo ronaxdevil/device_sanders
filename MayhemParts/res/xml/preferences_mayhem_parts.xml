@@ -139,6 +139,13 @@
         android:key="audio"
         android:title="@string/audio_title">
 
+        <com.moto.mayhemparts.preferences.SecureSettingSwitchPreference
+            android:key="highperfaudio"
+            android:defaultValue="false"
+            android:title="@string/highperfaudio_title"
+            android:icon="@drawable/ic_haudio"
+            android:summary="@string/highperfaudio_summary" />
+
         <com.moto.mayhemparts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="2"
             android:key="headphone_gain"

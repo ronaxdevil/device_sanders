@@ -46,3 +46,5 @@ get_prop(system_app, gpuboost_prop);
 
 allow system_app cpuboost_prop:property_service set;
 get_prop(system_app, cpuboost_prop);
+
+allow system_app sysfs_highperfaudio:file { open read getattr write };
