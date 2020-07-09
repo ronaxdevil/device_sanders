@@ -50,7 +50,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="sanders-user 8.1.0 OPS28.65-36-14 63857 release-keys"
 
 # FINGERPRINT
-BUILD_FINGERPRINT := google/coral/coral:10/QQ2A.200405.005/6254899:user/release-keys
+BUILD_FINGERPRINT := google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint="google/coral/coral:10/QQ2A.200405.005/6254899:user/release-keys"
+    ro.build.fingerprint="google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys"
+
