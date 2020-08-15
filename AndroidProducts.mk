@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/lineage_sanders.mk
+	$(LOCAL_DIR)/rr_sanders.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_sanders-user \
-    lineage_sanders-userdebug \
-    lineage_sanders-eng
+    rr_sanders-user \
+    rr_sanders-userdebug \
+    rr_sanders-eng
