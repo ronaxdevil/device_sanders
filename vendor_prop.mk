@@ -434,3 +434,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Boot
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.vendor.shutdown.waittime=500
+
+#IDKY
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.model=sanders
+
