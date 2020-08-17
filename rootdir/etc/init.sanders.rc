@@ -33,8 +33,8 @@ on init
     setprop ro.hw.fps true
     setprop ro.hw.imager 13MP
     setprop ro.product.manufacturer motorola
-    setprop ro.product.model Moto G (5S) Plus
-    setprop ro.product.vendor.model Moto G (5S) Plus
+    setprop ro.product.model "Moto G (5S) Plus"
+    setprop ro.product.vendor.model "Moto G (5S) Plus"
 
 on property:ro.hw.sku=XT1806
     setprop ro.hw.ecompass true
